@@ -1,0 +1,20 @@
+{
+  "name": "craftplugins/updates",
+  "description": "Outputs a client-friendly update log.",
+  "version": "1.0.0",
+  "type": "craft-plugin",
+  "license": "proprietary",
+  "require": {
+    "craftcms/cms": "^3.3.19"
+  },
+  "autoload": {
+    "psr-4": {
+      "craftplugins\\updates\\": "src/"
+    }
+  },
+  "extra": {
+    "handle": "updates",
+    "name": "Updates",
+    "documentationUrl": "https://github.com/craftplugins/updates/blob/master/README.md"
+  }
+}
