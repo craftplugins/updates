@@ -16,6 +16,7 @@ class UpdatesController extends Controller
      */
     protected array $friendlyNames = [
         'copy' => 'Deployment Tools',
+        'craft' => 'Craft CMS',
         'embeddedassets' => 'Embed Fields',
         'image-optimize' => 'Image Optimisation',
         'redactor' => 'Rich-text Fields',
@@ -32,6 +33,8 @@ class UpdatesController extends Controller
     {
         $updateData = Craft::$app->getApi()->getUpdates();
         $updates = new Updates($updateData);
+
+        $this->outputUpdate('craft', Craft::$app->version, $updates->cms->getLatest()->version, $updates->cms->getHasCritical(), $updates->cms->status, $updates->cms->phpConstraint);
 
         $pluginsService = Craft::$app->getPlugins();
 
